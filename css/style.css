@@ -1,0 +1,677 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+li {
+  font-size: 1rem;
+  list-style: none;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+:root {
+  --bg-color: #161616;
+  --light-bg: #3d3d3d;
+  --text-color: #eee;
+  --alt-text: #ddd;
+  --main-color: #b31313;
+  --alt-color: #8f1111;
+  --gredient: linear-gradient(98.73deg, var(--main-color) -52.43%, rgba(254, 31, 39, 0) 82.99%);
+}
+
+.heading {
+  margin: 60px 0;
+}
+
+.heading h1 {
+  position: relative;
+  font-size: 2rem;
+  color: var(--text-color);
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.heading h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+
+.heading h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+
+.heading h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+header {
+  height: 74px;
+  display: flex;
+  align-items: center;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+
+}
+
+header .logo h3 {
+  text-transform: uppercase;
+}
+
+header .logo h3 span {
+  color: var(--main-color);
+}
+
+header .logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+
+}
+
+header .container ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header .container ul li a {
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+header .container .navbar li a::before {
+  position: absolute;
+  content: ' ';
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 1px;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+
+header .navbar li a:hover {
+  color: var(--main-color);
+}
+
+header .navbar li a:hover::before {
+  width: 100%;
+}
+
+.dropdown {
+  display: none;
+}
+
+main header .drop-nav.open {
+  display: flex;
+  /* Show the dropdown menu when the "open" class is applied */
+  opacity: 1;
+  /* Set opacity to 1 when the menu is open */
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  font-size: .8rem;
+  font-weight: bold;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  color: var(--main-color);
+  border-color: var(--main-color);
+  background-color: transparent;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+main video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+main .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  height: 100%;
+}
+
+main .main h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+main * {
+  z-index: 999;
+}
+
+main::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+main:hover::before {
+  opacity: 0;
+}
+
+
+main .container h1::after {
+  content: "Get Your Body Shaped";
+  position: absolute;
+  bottom: -40px;
+  left: 40px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--main-color);
+  color: transparent;
+  width: 100%;
+}
+
+main .main .btn {
+  padding: 20px 35px;
+  font-size: 1.2rem;
+  border-radius: 45px;
+}
+
+main .icons i {
+  font-size: 1.4rem;
+  width: 100%;
+  transition: 0.3s;
+}
+
+
+main .icons i:hover {
+  color: var(--main-color);
+}
+
+
+section {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 60px 0;
+}
+
+
+#Pricing {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+
+#Pricing .heading h1 {
+  color: var(--bg-color);
+}
+
+
+#Pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+#Pricing .container .card {
+  margin: 0 auto;
+  background-color: var(--alt-text);
+  padding: 60px 40px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#Pricing .container .card .image {
+  background-color: var(--bg-color);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+#Pricing .container .card .image img {
+  width: 100%;
+  padding: 15px;
+  filter: invert(100%);
+  object-position: center;
+}
+
+#Pricing .container .card h3 {
+  font-weight: 600;
+  color: var(--main-color);
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+
+}
+
+#Pricing .container .card ul li {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+#Pricing .container .card ul {
+  padding: 20px;
+  text-align: center;
+}
+
+#Pricing .container .card ul li i {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  width: 50px;
+  transition: 0.3s;
+}
+
+#Pricing .container .card a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 20px;
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+
+
+#Pricing .container .card:hover a {
+  background-color: var(--main-color);
+}
+
+#Pricing .container .card:hover .image {
+  background-color: var(--main-color);
+}
+
+
+#Gallery .gallery {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+#Gallery .gallery .image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#Gallery .gallery .image img {
+  width: 100%;
+  filter: brightness(.7);
+  transition: 0.3s;
+}
+
+#Gallery .gallery .image:hover img {
+  filter: brightness(1);
+  transform: scale(1.1);
+}
+
+#Contact {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+#Contact .heading h1 {
+  color: var(--bg-color);
+}
+
+#Contact .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+#Contact .contact {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+#Contact .info {
+  flex-basis: 40%;
+  padding: 40px;
+  background-color: var(--bg-color);
+  text-align: center;
+
+}
+
+#Contact .info h3 {
+  color: var(--text-color);
+}
+
+
+#Contact .info ul {
+  margin: 80px 0;
+  text-align: left;
+}
+
+#Contact .info li {
+  padding: 40px 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#Contact .info i {
+  margin-right: 10px;
+  color: var(--main-color);
+  width: 20px;
+  font-size: 1.5rem;
+}
+
+#Contact .info .icons i {
+  padding: 20px;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+
+#Contact .info .icons i:hover {
+  color: var(--text-color);
+  transform: scale(1.2);
+}
+
+#Contact .icons a {
+  margin-right: 10px;
+}
+
+#Contact .send {
+  flex-basis: 80%;
+  padding: 40px;
+  background-color: var(--alt-text);
+}
+
+#Contact .send h3 {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  color: var(--bg-color);
+}
+
+#Contact form {
+  margin-top: 10px;
+}
+
+#Contact .flex {
+  display: flex;
+  gap: 10px;
+}
+
+#Contact .flex label {
+  width: 50%;
+}
+
+#Contact label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#Contact .input,
+#Contact .input01 {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#Contact input:focus,
+#Contact textarea {
+  outline: none;
+  border: 1px solid var(--main-color);
+}
+
+#Contact button {
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+#Contact button:hover {
+  background-color: var(--alt-color);
+}
+
+#Contact .map {
+  width: 100%;
+  height: 450px;
+}
+
+#Contact .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+
+.loading-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5999;
+  padding: 0;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.loading-container .loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+}
+
+.loading-container h3 {
+  margin: 0 10px;
+  color: var(--main-color);
+  font-size: 2rem;
+}
+
+.loading-container h3 span {
+  color: var(--text-color);
+}
+
+
+.loading-container .loading .percent {
+  position: relative;
+  top: 2px;
+  width: calc(100%);
+  height: 20px;
+  background: #151515;
+  margin: 0 10px;
+  box-shadow: inset 0 0 10px #000;
+  overflow: hidden;
+}
+
+.loading-container .loading .percent .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  animation: animate 4s ease-in-out infinite;
+}
+
+
+
+@keyframes animate {
+  0% {
+    width: 0;
+
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: 1s ease-out;
+}
+
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 1s ease-out;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 1s ease-out;
+}
+
+.reset {
+  opacity: 1;
+  transform: translate(0);
+  transition: 1s ease-out;
+}
